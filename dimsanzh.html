@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Resto Staff</title>
+
+  <link rel="stylesheet" href="ds.css">
+</head>
+
+<body>
+
+  
+
+  <section class="login-screen" id="loginScreen">
+
+    <div class="login-card">
+
+      <div class="logo">🍽️</div>
+
+      <h1>Resto Staff</h1>
+
+      <p>Внутренний портал сотрудников ресторана</p>
+
+      <form id="loginForm">
+
+        <div class="form-group">
+          <label>Логин</label>
+          <input
+            type="text"
+            id="login"
+            placeholder="Введите логин"
+            value="staff"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label>Пароль</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Введите пароль"
+            value="1234"
+            required
+          >
+        </div>
+
+        <button class="login-btn" type="submit">
+          Войти
+        </button>
+
+      </form>
+
+      <div class="demo-login">
+        Демо: staff / 1234
+      </div>
+
+    </div>
+
+  </section>
+
+
+  
+
+  <div class="app" id="app">
+
+    
+    <aside class="sidebar" id="sidebar">
+
+      <div class="brand">
+
+        <div class="brand-icon">
+          🍽️
+        </div>
+
+        <div>
+          <strong>Resto Staff</strong>
+          <span>Staff Portal</span>
+        </div>
+
+      </div>
+
+
+      <div class="nav-title">
+        МЕНЮ
+      </div>
+
+
+      <nav class="nav">
+
+        <button class="active" data-page="dashboard">
+          🏠
+          <span>Главная</span>
+        </button>
+
+        <button data-page="schedule">
+          📅
+          <span>Расписание</span>
+        </button>
+
+        <button data-page="tasks">
+          ✅
+          <span>Задачи</span>
+        </button>
+
+        <button data-page="requests">
+          📝
+          <span>Заявки</span>
+        </button>
+
+        <button data-page="news">
+          📢
+          <span>Новости</span>
+        </button>
+
+        <button data-page="profile">
+          👤
+          <span>Профиль</span>
+        </button>
+
+      </nav>
+
+
+      <div class="sidebar-bottom">
+
+        <div class="user-mini">
+
+          <div class="avatar">
+            АК
+          </div>
+
+          <div>
+            <strong>Дима Санжик</strong>
+            <small>Официант</small>
+          </div>
+
+          <button class="logout" id="logout">
+            ↪
+          </button>
+
+        </div>
+
+      </div>
+
+    </aside>
+
+
+    
+
+    <main class="main">
+
+      <header class="topbar">
+
+        <button
+          class="mobile-menu"
+          id="mobileMenu"
+        >
+          ☰
+        </button>
+
+        <div></div>
+
+        <div class="topbar-right">
+
+          <span
+            class="date"
+            id="currentDate"
+          ></span>
+
+          <button
+            class="notification"
+            id="notificationBtn"
+          >
+            🔔
+            <span class="notification-dot"></span>
+          </button>
+
+        </div>
+
+      </header>
+
+
+      <div class="content">
+
+
+        
+
+        <section
+          class="page active"
+          id="dashboard"
+        >
+
+          <div class="page-title">
+
+            <h1>
+              Доброе утро, Дима 👋
+            </h1>
+
+            <p>
+              Вот что происходит в ресторане сегодня.
+            </p>
+
+          </div>
+
+
+          <div class="stats">
+
+            <div class="stat-card">
+
+              <div class="stat-top">
+
+                <span>
+                  Следующая смена
+                </span>
+
+                <div class="stat-icon">
+                  🕐
+                </div>
+
+              </div>
+
+              <h2>
+                18:00
+              </h2>
+
+              <div class="positive">
+                Сегодня
+              </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+              <div class="stat-top">
+
+                <span>
+                  Смены в месяце
+                </span>
+
+                <div class="stat-icon">
+                  📅
+                </div>
+
+              </div>
+
+              <h2>
+                18
+              </h2>
+
+              <div class="positive">
+                +2 к прошлому месяцу
+              </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+              <div class="stat-top">
+
+                <span>
+                  Часы работы
+                </span>
+
+                <div class="stat-icon">
+                  ⏱️
+                </div>
+
+              </div>
+
+              <h2>
+                126 ч
+              </h2>
+
+              <div class="positive">
+                78% плана
+              </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+              <div class="stat-top">
+
+                <span>
+                  Задачи
+                </span>
+
+                <div class="stat-icon">
+                  ✓
+                </div>
+
+              </div>
+
+              <h2>
+                8/10
+              </h2>
+
+              <div class="positive">
+                80% выполнено
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="dashboard-grid">
+
+
+            
+
+            <div>
+
+              <div class="card">
+
+                <div class="card-header">
+
+                  <h3>
+                    Ближайшие смены
+                  </h3>
+
+                  <button
+                    class="link-btn"
+                    data-open-page="schedule"
+                  >
+                    Все смены →
+                  </button>
+
+                </div>
+
+
+                <div class="shift">
+
+                  <div class="shift-date">
+                    <strong>07</strong>
+                    <span>окт</span>
+                  </div>
+
+                  <div class="shift-info">
+
+                    <strong>
+                      Вечерняя смена
+                    </strong>
+
+                    <p>
+                      18:00 — 02:00 · Основной зал
+                    </p>
+
+                  </div>
+
+                  <span class="badge green">
+                    Сегодня
+                  </span>
+
+                </div>
+
+
+                <div class="shift">
+
+                  <div class="shift-date">
+                    <strong>08</strong>
+                    <span>окт</span>
+                  </div>
+
+                  <div class="shift-info">
+
+                    <strong>
+                      Вечерняя смена
+                    </strong>
+
+                    <p>
+                      17:00 — 01:00 · Основной зал
+                    </p>
+
+                  </div>
+
+                  <span class="badge blue">
+                    Завтра
+                  </span>
+
+                </div>
+
+
+                <div class="shift">
+
+                  <div class="shift-date">
+                    <strong>10</strong>
+                    <span>окт</span>
+                  </div>
+
+                  <div class="shift-info">
+
+                    <strong>
+                      Дневная смена
+                    </strong>
+
+                    <p>
+                      12:00 — 20:00 · Терраса
+                    </p>
+
+                  </div>
+
+                  <span class="badge orange">
+                    Через 3 дня
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="card">
+
+                <div class="card-header">
+
+                  <h3>
+                    Мои задачи
+                  </h3>
+
+                  <button
+                    class="link-btn"
+                    data-open-page="tasks"
+                  >
+                    Все задачи →
+                  </button>
+
+                </div>
+
+
+                <label class="task">
+
+                  <input
+                    type="checkbox"
+                    checked
+                  >
+
+                  <span>
+                    Проверить столы в зале
+                  </span>
+
+                  <small>
+                    09:30
+                  </small>
+
+                </label>
+
+
+                <label class="task">
+
+                  <input type="checkbox">
+
+                  <span>
+                    Подготовить сервировочные наборы
+                  </span>
+
+                  <small>
+                    17:30
+                  </small>
+
+                </label>
+
+
+                <label class="task">
+
+                  <input type="checkbox">
+
+                  <span>
+                    Проверить меню и стоп-лист
+                  </span>
+
+                  <small>
+                    17:45
+                  </small>
+
+                </label>
+
+              </div>
+
+            </div>
+
+
+            
+
+            <div>
+
+              <div class="card">
+
+                <div class="card-header">
+
+                  <h3>
+                    Новости
+                  </h3>
+
+                  <button
+                    class="link-btn"
+                    data-open-page="news"
+                  >
+                    Все →
+                  </button>
+
+                </div>
+
+
+                <div class="news">
+
+                  <div class="news-icon">
+                    📢
+                  </div>
+
+                  <div>
+
+                    <strong>
+                      Новое сезонное меню
+                    </strong>
+
+                    <p>
+                      С 10 октября запускаем осеннее меню.
+                    </p>
+
+                  </div>
+
+                </div>
+
+
+                <div class="news">
+
+                  <div class="news-icon">
+                    👕
+                  </div>
+
+                  <div>
+
+                    <strong>
+                      Новая форма
+                    </strong>
+
+                    <p>
+                      Новая форма доступна у администратора.
+                    </p>
+
+                  </div>
+
+                </div>
+
+
+                <div class="news">
+
+                  <div class="news-icon">
+                    ⭐
+                  </div>
+
+                  <div>
+
+                    <strong>
+                      Сотрудник месяца
+                    </strong>
+
+                    <p>
+                      Поздравляем Анну с победой!
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="card">
+
+                <div class="card-header">
+
+                  <h3>
+                    Быстрые действия
+                  </h3>
+
+                </div>
+
+                <button
+                  class="request-btn"
+                  data-open-page="requests"
+                >
+                  + Создать заявку
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+       
+
+        <section
+          class="page"
+          id="schedule"
+        >
+
+          <div class="page-title">
+
+            <h1>
+              Моё расписание
+            </h1>
+
+            <p>
+              Ваши рабочие смены.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="card-header">
+
+              <h3>
+                Октябрь 2026
+              </h3>
+
+              <button
+                class="request-btn"
+                id="scheduleRequest"
+              >
+                Запросить изменение
+              </button>
+
+            </div>
+
+
+            <table class="schedule-table">
+
+              <thead>
+
+                <tr>
+                  <th>Дата</th>
+                  <th>День</th>
+                  <th>Время</th>
+                  <th>Зона</th>
+                  <th>Статус</th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>07.10</td>
+                  <td>Сегодня</td>
+                  <td>18:00 — 02:00</td>
+                  <td>Основной зал</td>
+                  <td>
+                    <span class="badge green">
+                      Подтверждено
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>08.10</td>
+                  <td>Чт</td>
+                  <td>17:00 — 01:00</td>
+                  <td>Основной зал</td>
+                  <td>
+                    <span class="badge green">
+                      Подтверждено
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>09.10</td>
+                  <td>Пт</td>
+                  <td>Выходной</td>
+                  <td>—</td>
+                  <td>
+                    <span class="badge blue">
+                      Выходной
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>10.10</td>
+                  <td>Сб</td>
+                  <td>12:00 — 20:00</td>
+                  <td>Терраса</td>
+                  <td>
+                    <span class="badge green">
+                      Подтверждено
+                    </span>
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+
+        
+
+        <section
+          class="page"
+          id="tasks"
+        >
+
+          <div class="page-title">
+
+            <h1>
+              Мои задачи
+            </h1>
+
+            <p>
+              Задачи на сегодня.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <label class="task">
+              <input type="checkbox" checked>
+              <span>Проверить столы в зале</span>
+              <small>Выполнено</small>
+            </label>
+
+            <label class="task">
+              <input type="checkbox">
+              <span>Подготовить сервировочные наборы</span>
+              <small>17:30</small>
+            </label>
+
+            <label class="task">
+              <input type="checkbox">
+              <span>Проверить меню и стоп-лист</span>
+              <small>17:45</small>
+            </label>
+
+            <label class="task">
+              <input type="checkbox">
+              <span>Проверить чистоту станции</span>
+              <small>18:00</small>
+            </label>
+
+            <label class="task">
+              <input type="checkbox">
+              <span>Сдать отчёт после смены</span>
+              <small>02:00</small>
+            </label>
+
+          </div>
+
+        </section>
+
+
+       
+        <section
+          class="page"
+          id="requests"
+        >
+
+          <div class="page-title">
+
+            <h1>
+              Заявки
+            </h1>
+
+            <p>
+              Обращения к менеджеру.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <h3>
+              Создать заявку
+            </h3>
+
+
+            <div class="form-group">
+
+              <label>
+                Тип заявки
+              </label>
+
+              <select id="requestType">
+
+                <option>
+                  Замена смены
+                </option>
+
+                <option>
+                  Выходной
+                </option>
+
+                <option>
+                  Опоздание
+                </option>
+
+                <option>
+                  Другое
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label>
+                Комментарий
+              </label>
+
+              <textarea
+                id="requestText"
+                placeholder="Опишите вашу заявку..."
+              ></textarea>
+
+            </div>
+
+
+            <button
+              class="request-btn"
+              id="sendRequest"
+            >
+              Отправить заявку
+            </button>
+
+          </div>
+
+        </section>
+
+
+        
+
+        <section
+          class="page"
+          id="news"
+        >
+
+          <div class="page-title">
+
+            <h1>
+              Новости
+            </h1>
+
+            <p>
+              Новости и объявления ресторана.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="news">
+
+              <div class="news-icon">
+                📢
+              </div>
+
+              <div>
+
+                <strong>
+                  Новое сезонное меню
+                </strong>
+
+                <p>
+                  С 10 октября запускается новое сезонное меню.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="news">
+
+              <div class="news-icon">
+                👕
+              </div>
+
+              <div>
+
+                <strong>
+                  Новая форма
+                </strong>
+
+                <p>
+                  Новая форма доступна у администратора.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="news">
+
+              <div class="news-icon">
+                ⭐
+              </div>
+
+              <div>
+
+                <strong>
+                  Сотрудник месяца
+                </strong>
+
+                <p>
+                  Поздравляем Анну с победой в сентябре!
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        
+
+        <section
+          class="page"
+          id="profile"
+        >
+
+          <div class="page-title">
+
+            <h1>
+              Мой профиль
+            </h1>
+
+            <p>
+              Личная информация сотрудника.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="profile">
+
+              <div class="big-avatar">
+                АК
+              </div>
+
+              <div>
+
+                <h2>
+                  Дима Санжар
+                </h2>
+
+                <p>
+                  Официант · Основной зал
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <table class="schedule-table">
+
+              <tr>
+                <td><strong>Имя</strong></td>
+                <td>Алексей Ким</td>
+              </tr>
+
+              <tr>
+                <td><strong>Должность</strong></td>
+                <td>Официант</td>
+              </tr>
+
+              <tr>
+                <td><strong>Отдел</strong></td>
+                <td>Сервис</td>
+              </tr>
+
+              <tr>
+                <td><strong>Дата начала работы</strong></td>
+                <td>15.03.2025</td>
+              </tr>
+
+              <tr>
+                <td><strong>Статус</strong></td>
+
+                <td>
+                  <span class="badge green">
+                    Активен
+                  </span>
+                </td>
+
+              </tr>
+
+            </table>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </main>
+
+  </div>
+
+
+  <script src="ds2.js"></script>
+
+</body>
+</html>
